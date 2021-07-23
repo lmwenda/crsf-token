@@ -52,7 +52,7 @@ app.post('/api/login', parseForm, xsrfProtection,(req, res) => {
     }
     else{
         const token = req.csrfToken();
-        // Return XSRF-TOKEN, atkn, and ACT_SSO_COOKIE cookies after successful login
+        // Return XSRF-TOKEN cookie after successful login
 
         res.cookie('XSRF-TOKEN', req.csrfToken());
         res.locals.csrfToken = token;
